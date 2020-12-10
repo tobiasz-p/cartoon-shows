@@ -1,0 +1,38 @@
+package com.cartoon_shows
+
+import java.util.Arrays;
+ 
+ declare State
+ 	question: String
+ 	answer: String
+ end
+ 
+ rule "Init"
+ 	when
+ 	
+ 	then
+ 		String answer = Window.updateFrame("A cartoon based on a video game?");
+ 		insert( new State("A cartoon based on a video game?", answer));
+end
+
+rule "Nintendo-franchise"
+	when
+		a: State(question == "A cartoon based on a video game?", answer == "Yes")
+	then
+		String answer = Window.updateFrame("A nintendo franchise?");
+ 		insert( new State("A nintendo franchise?", answer));
+end
+
+rule "Nintendo-franchise-match"
+	when
+		a: State(question == "A nintendo franchise?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"The Super Mario Bros. Super Show", 
+			"Captain N The Game Master", 
+			"The Adventure of Super Mario Bros. 3",
+			"Super Mario World",
+			"The Legend of Zelda",
+			"Pokémon"));
+end
+		
