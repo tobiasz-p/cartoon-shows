@@ -7,16 +7,15 @@ import javax.swing.JOptionPane;
 public class Window {
 	public static JFrame frame;
 	
-	public static String updateFrame(String questionValue){
-		int dialogButton = JOptionPane.YES_NO_OPTION;
-		int dialogResult = JOptionPane.showConfirmDialog(null, questionValue, "Answer the question", dialogButton);
-		if(dialogResult == JOptionPane.YES_OPTION)
-			return "Yes";
-		else
-			return "No";
+	public static String updateFrame(String questionValue, List<String> options){
+		int index = JOptionPane.showOptionDialog(null, questionValue, "Answer the question:",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, 
+                options.toArray(new String[options.size()]), options.get(0));
+		
+		return options.get(index);
 	}
 	
-	public static void showMatch(List <String> titles){
+	public static void showMatch(List<String> titles){
 		String listString = "";
 		for (String t : titles){
 		    listString += "* " + t + "\n";

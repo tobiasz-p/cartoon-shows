@@ -1,7 +1,9 @@
 package com.cartoon_shows
 
+import java.util.List;
 import java.util.Arrays;
- 
+
+
  declare State
  	question: String
  	answer: String
@@ -11,7 +13,8 @@ import java.util.Arrays;
  	when
  	
  	then
- 		String answer = Window.updateFrame("A cartoon based on a video game?");
+ 		List<String> list = Arrays.asList("No", "Yes");
+ 		String answer = Window.updateFrame("A cartoon based on a video game?", list);
  		insert( new State("A cartoon based on a video game?", answer));
 end
 
@@ -19,7 +22,8 @@ rule "Nintendo-franchise"
 	when
 		a: State(question == "A cartoon based on a video game?", answer == "Yes")
 	then
-		String answer = Window.updateFrame("A nintendo franchise?");
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame("A nintendo franchise?", list);
  		insert( new State("A nintendo franchise?", answer));
 end
 
