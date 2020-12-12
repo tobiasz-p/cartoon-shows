@@ -38,7 +38,7 @@ rule "Nintendo-franchise-match-yes"
 			"The Adventure of Super Mario Bros. 3",
 			"Super Mario World",
 			"The Legend of Zelda",
-			"Pokémon"));
+			"PokÃ©mon"));
 end
 
 rule "Nintendo-franchise-match-no"
@@ -342,7 +342,6 @@ rule "Military and-law-enforcment-match-yes"
 		Window.showMatch(Arrays.asList(
 			"Rambo and the Force of Freedom",
 			"Robocop: The Animated Series",
-			"Highlander: The Animated Series",
 			"M.A.S.K.",
 			"G.I Joe",
 			"C.O.P.S.",
@@ -527,7 +526,7 @@ rule "Educational-match-no"
 		Window.showMatch(Arrays.asList(
 			"Mighty Max",
 			"The Real Adventures of Johnny Quest",
-			"Bonic Six"));
+			"Bionic Six"));
 end
 
 rule "Educational-match-yes"
