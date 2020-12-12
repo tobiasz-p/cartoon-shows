@@ -38,7 +38,7 @@ rule "Nintendo-franchise-match-yes"
 			"The Adventure of Super Mario Bros. 3",
 			"Super Mario World",
 			"The Legend of Zelda",
-			"Pokï¿½mon"));
+			"Pokémon"));
 end
 
 rule "Nintendo-franchise-match-no"
@@ -195,7 +195,7 @@ end
 
 rule "Monkeys-match-yes"
 	when
-		a: State(question == "Bears?", answer == "Yes")
+		a: State(question == "Monkeys?", answer == "Yes")
 	then
 		Window.showMatch(Arrays.asList(
 			"Captain Simian and the Space Monkeys"));
@@ -213,7 +213,7 @@ end
 
 rule "Cows-match-yes"
 	when
-		a: State(question == "Bears?", answer == "Yes")
+		a: State(question == "Cows?", answer == "Yes")
 	then
 		Window.showMatch(Arrays.asList(
 			"Wild West Cowboys of Moo Mesa"));
@@ -337,7 +337,7 @@ end
 
 rule "Military and-law-enforcment-match-yes"
 	when
-		a: State(question == "Space?", answer == "Yes")
+		a: State(question == "Military and law enforcment?", answer == "Yes")
 	then
 		Window.showMatch(Arrays.asList(
 			"Rambo and the Force of Freedom",
