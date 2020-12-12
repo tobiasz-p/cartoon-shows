@@ -22,12 +22,13 @@ rule "Nintendo-franchise"
 	when
 		a: State(question == "A cartoon based on a video game?", answer == "Yes")
 	then
+		String newQuestion = "A nintendo franchise?";
 		List<String> list = Arrays.asList("No", "Yes");
-		String answer = Window.updateFrame("A nintendo franchise?", list);
- 		insert( new State("A nintendo franchise?", answer));
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
 end
 
-rule "Nintendo-franchise-match"
+rule "Nintendo-franchise-match-yes"
 	when
 		a: State(question == "A nintendo franchise?", answer == "Yes")
 	then
@@ -37,6 +38,536 @@ rule "Nintendo-franchise-match"
 			"The Adventure of Super Mario Bros. 3",
 			"Super Mario World",
 			"The Legend of Zelda",
-			"Pokémon"));
+			"Pokï¿½mon"));
 end
-		
+
+rule "Nintendo-franchise-match-no"
+	when
+		a: State(question == "A nintendo franchise?", answer == "No")
+	then
+		Window.showMatch(Arrays.asList(
+			"Adventures of Sonic the Hedgehog",
+            "Mega Man",
+            "Mortal Kombat Defenders of the Realm",
+            "Double Dragon",
+            "Wing Commander Academy",
+            "Street Fighter"));
+end
+
+rule "Celebrity"
+	when
+		a: State(question == "A cartoon based on a video game?", answer == "No")
+	then
+		String newQuestion = "A celebrity?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Celebrity-match-yes"
+	when
+		a: State(question == "A celebrity?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Chuck Norris: Karate Kommandos",
+			"Mister T"));
+end
+
+rule "Animals"
+	when
+		a: State(question == "A celebrity?", answer == "No")
+	then
+		String newQuestion = "Animals, furries and the like?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Cats"
+	when
+		a: State(question == "Animals, furries and the like?", answer == "Yes")
+	then
+		String newQuestion = "Cats?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Cats-match-yes"
+	when
+		a: State(question == "Cats?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"ThunderCats",
+			"Swat Kats"));
+end
+
+rule "Rodents"
+	when
+		a: State(question == "Cats?", answer == "No")
+	then
+		String newQuestion = "Rodents?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Rodents-match-yes"
+	when
+		a: State(question == "Rodents?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Biker Mice from Mars",
+			"Danger Mouse",
+			"Chip N Dale Rescue Rangers"));
+end
+
+rule "Dinosaurs"
+	when
+		a: State(question == "Rodents?", answer == "No")
+	then
+		String newQuestion = "Dinosaurs?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Dinosaurs-match-yes"
+	when
+		a: State(question == "Dinosaurs?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Cadillacs and Dinosaurs",
+			"Extreme Dinosaurs",
+			"Dino Riders",
+			"Dinosaucers"));
+end
+
+rule "Ducks"
+	when
+		a: State(question == "Dinosaurs?", answer == "No")
+	then
+		String newQuestion = "Ducks?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Ducks-match-yes"
+	when
+		a: State(question == "Ducks?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Count Duckula",
+			"DuckTales",
+			"Darkwing Duck"));
+end
+
+rule "Bears"
+	when
+		a: State(question == "Ducks?", answer == "No")
+	then
+		String newQuestion = "Bears?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Bears-match-yes"
+	when
+		a: State(question == "Bears?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"TaleSpin",
+			"Disney's Adventures of the Gummi Bears",
+			"The Care Bears"));
+end
+
+rule "Monkeys"
+	when
+		a: State(question == "Bears?", answer == "No")
+	then
+		String newQuestion = "Monkeys?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Monkeys-match-yes"
+	when
+		a: State(question == "Bears?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Captain Simian and the Space Monkeys"));
+end
+
+rule "Cows"
+	when
+		a: State(question == "Monkeys?", answer == "No")
+	then
+		String newQuestion = "Cows?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Cows-match-yes"
+	when
+		a: State(question == "Bears?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Wild West Cowboys of Moo Mesa"));
+end
+
+rule "Godless abominations"
+	when
+		a: State(question == "Cows?", answer == "No")
+	then
+		String newQuestion = "Godless abominations?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Godless-abominations-match-yes"
+	when
+		a: State(question == "Godless abominations?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Smurfs",
+			"Snorks"));
+end
+
+rule "Godless-abominations-match-no"
+	when
+		a: State(question == "Godless abominations?", answer == "No")
+	then
+		Window.showMatch(Arrays.asList(
+			"Teenage Mutant Ninja Turtles",
+			"Street Sharks",
+			"Gargoyles"));
+end
+
+rule "Giant-robots"
+	when
+		a: State(question == "Animals, furries and the like?", answer == "No")
+	then
+		String newQuestion = "Do you dig giant robots?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Giant-robots-match-yes"
+	when
+		a: State(question == "Do you dig giant robots?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Robotech",
+			"Voltron",
+			"Transformers",
+			"Challange of the GoBots"));
+end
+
+rule "Based-on-movie"
+	when
+		a: State(question == "Do you dig giant robots?", answer == "No")
+	then
+		String newQuestion = "A cartoon based on a movie?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Post-apo"
+	when
+		a: State(question == "A cartoon based on a movie?", answer == "No")
+	then
+		String newQuestion = "Do you want a post-apocalyptic setting?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Post-apo-match-yes"
+	when
+		a: State(question == "Do you want a post-apocalyptic setting?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Highlander: The Animated Series",
+			"Thundarr the Barbarian",
+			"Cadillacs and Dinosaurs",
+			"Spiral Zone"));
+end
+
+rule "Swords-and-sorcery"
+	when
+		a: State(question == "Do you want a post-apocalyptic setting?", answer == "No")
+	then
+		String newQuestion = "Swords and sorcery?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Swords-and-sorcery-match-yes"
+	when
+		a: State(question == "Swords and sorcery?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"The Pirates of Dark Water",
+			"King Arthur and the Knights of Justice",
+			"He-Man and the Masters of the Universe",
+			"Conan the Adventurer",
+			"Thundarr the Barbarian",
+			"Visionaries",
+			"Dungeons & Dragons",
+			"She-Ra, Princess of Power"));
+end
+
+rule "Military-and-law-enforcment"
+	when
+		a: State(question == "Swords and sorcery?", answer == "No")
+	then
+		String newQuestion = "Military and law enforcment?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Military and-law-enforcment-match-yes"
+	when
+		a: State(question == "Space?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Rambo and the Force of Freedom",
+			"Robocop: The Animated Series",
+			"Highlander: The Animated Series",
+			"M.A.S.K.",
+			"G.I Joe",
+			"C.O.P.S.",
+			"Exosquad",
+			"SilverHawks",
+			"Sky Commanders",
+			"Spiral Zone",
+			"Centurions",
+			"Sam & Max: Freelance Police",
+			"Inspector Gadget",
+			"The adventures of the Galaxy Rangers",
+			"BraveStarr"));
+end
+
+rule "Space"
+	when
+		a: State(question == "Military and law enforcment?", answer == "No")
+	then
+		String newQuestion = "Space?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Space-match-yes"
+	when
+		a: State(question == "Space?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Captain Simian and the Space Monkeys",
+			"Jayce and the Wheeled Warriors",
+			"Exosquad",
+			"Silver Hawks",
+			"The Adventures of Galaxy Rangers",
+			"BraveStarr"));
+end
+
+rule "Cowboys"
+	when
+		a: State(question == "Space?", answer == "No")
+	then
+		String newQuestion = "Cowboys?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Cowboys-match-yes"
+	when
+		a: State(question == "Cowboys?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Wild West Cowboys of Moo Mesa",
+			"The Adventures of the Galaxy Rangers",
+			"BraveStarr"));
+end
+
+rule "Whats-going-on"
+	when
+		a: State(question == "Cowboys?", answer == "No")
+	then
+		String newQuestion = "Do you want to understand what's going on?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Awesome-way"
+	when
+		a: State(question == "Do you want to understand what's going on?", answer == "No")
+	then
+		String newQuestion = "In an awesome way?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Awesome-way-match-yes"
+	when
+		a: State(question == "In an awesome way?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Inhumanoids"));
+end
+
+rule "Awesome-way-match-no"
+	when
+		a: State(question == "In an awesome way?", answer == "No")
+	then
+		Window.showMatch(Arrays.asList(
+			"Aeon Flux"));
+end
+
+rule "Kids"
+	when
+		a: State(question == "Do you want to understand what's going on?", answer == "Yes")
+	then
+		String newQuestion = "Kids doing awesome stuff?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Computers"
+	when
+		a: State(question == "Kids doing awesome stuff?", answer == "No")
+	then
+		String newQuestion = "Do you like computers?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Comptuers-match-yes"
+	when
+		a: State(question == "In an awesome way?", answer == "No")
+	then
+		Window.showMatch(Arrays.asList(
+			"ReBoot"));
+end
+
+rule "Outrageous"
+	when
+		a: State(question == "Do you like computers?", answer == "No")
+	then
+		String newQuestion = "Something truly outrageous?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Outrageous-match-yes"
+	when
+		a: State(question == "Something truly outrageous?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Jem"));
+end
+
+rule "Undead"
+	when
+		a: State(question == "Something truly outrageous?", answer == "No")
+	then
+		String newQuestion = "The undead?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Undead-match-yes"
+	when
+		a: State(question == "The undead?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Mummies Alive",
+			"Skeleton Warriors"));
+end
+
+
+rule "Undead-match-no"
+	when
+		a: State(question == "The undead?", answer == "No")
+	then
+		Window.showMatch(Arrays.asList(
+			"The World of David the Gnome"));
+end
+
+rule "Educational"
+	when
+		a: State(question == "Kids doing awesome stuff?", answer == "Yes")
+	then
+		String newQuestion = "In an educational manner?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "Educational-match-no"
+	when
+		a: State(question == "In an educational manner?", answer == "No")
+	then
+		Window.showMatch(Arrays.asList(
+			"Mighty Max",
+			"The Real Adventures of Johnny Quest",
+			"Bonic Six"));
+end
+
+rule "Educational-match-yes"
+	when
+		a: State(question == "In an educational manner?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"The Magic School Bus",
+			"Captain Planet and the Planeteers"));
+end
+
+rule "R-rated-movie"
+	when
+		a: State(question == "A cartoon based on a movie?", answer == "Yes")
+	then
+		String newQuestion = "An R-rated movie?";
+		List<String> list = Arrays.asList("No", "Yes");
+		String answer = Window.updateFrame(newQuestion, list);
+ 		insert( new State(newQuestion, answer));
+end
+
+rule "R-rated-movie-match-no"
+	when
+		a: State(question == "An R-rated movie?", answer == "No")
+	then
+		Window.showMatch(Arrays.asList(
+			"Star Wars: Ewoks",
+			"Extreme Ghostbusters",
+			"Star Wars: Droids",
+			"James Bond Jr.",
+			"The Real Ghostbusters"));
+end
+
+
+rule "R-rated-movie-match-yes"
+	when
+		a: State(question == "An R-rated movie?", answer == "Yes")
+	then
+		Window.showMatch(Arrays.asList(
+			"Rambo and the Force of Freedom",
+			"Robocop: The Animated Series",
+			"Highlander: The Animated Series"));
+end
