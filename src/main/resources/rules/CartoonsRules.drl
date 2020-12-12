@@ -458,7 +458,7 @@ end
 
 rule "Comptuers-match-yes"
 	when
-		a: State(question == "In an awesome way?", answer == "No")
+		a: State(question == "Do you like computers?", answer == "Yes")
 	then
 		Window.showMatch(Arrays.asList(
 			"ReBoot"));
